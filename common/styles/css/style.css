@@ -11,6 +11,10 @@ html {
     font-size: 10px;
 }
 
+.background-login {
+    opacity: 0.5;
+}
+
 body,
 input,
 button {
@@ -369,12 +373,12 @@ select {
     margin-bottom: 30px;
 }
 
-.erkab-title {
+.login-title {
     color: #FFFFFF;
     font-size: 500%;
 }
 
-.erkab-title-sm {
+.car-title-sm {
     font-size: 350%;
 }
 
@@ -512,11 +516,6 @@ option .selected .disabled {
         min-width: 400%;
         min-height: 400%;
     }
-}
-
-.gradient-cover {
-    background: linear-gradient(#00a1c500, #05e4e09e);
-    height: inherit;
 }
 
 .positioned-index-elements {
@@ -768,7 +767,7 @@ input[type="button"] {
     width: 220px;
 }
 
-#erkabBtn, #loginOrSignupBtn, #saveBtn, #editBtn, #confirmPassBtn {
+#loginOrSignupBtn, #saveBtn, #editBtn, #confirmPassBtn {
     font-family: "montserrat-regular", sans-serif;
     cursor: hand;
 }
