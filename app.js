@@ -1,16 +1,16 @@
-let compression = require('compression');
-let express = require('express');
-let app = express();
+var compression = require('compression');
+var express = require('express');
+var app = express();
 const port = 3000;
 
 app.use(compression());
 
 // view engine setup
-app.set('views', __dirname + '/server/views');
+app.set('views', __dirname + '/app_server/views');
 app.set('view engine', 'ejs');
 app.set('view cache', true);
 
-app.use("/common", express.static(__dirname + '/common'));
+app.use("/public", express.static(__dirname + '/public'));
 
 require('dotenv').config();
 var path = require('path');

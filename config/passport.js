@@ -1,5 +1,5 @@
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../server/models/user');
+var User = require('../app_server/model/user');
 
 module.exports = {
     setupPassport: function (passport) {
@@ -26,7 +26,7 @@ module.exports = {
                         return done(err);
                     }
                     if (user) {
-                        return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+                        return done(null, false, req.flash('signupMessage', 'El correo ya ha sido registrado'));
                     } else {
                         var newUser = new User();
                         newUser.email = email;
@@ -60,10 +60,10 @@ module.exports = {
                         return done(err);
                     }
                     if (!user) // User not found
-                        return done(null, false, req.flash('loginMessage', 'Wrong email or password.')); // req.flash is the way to set flashdata using connect-flash
+                        return done(null, false, req.flash('loginMessage', 'Correo o contraseña incorrecto')); // req.flash is the way to set flashdata using connect-flash
 
                     if (!user.validPassword(password)) // Wrong password
-                        return done(null, false, req.flash('loginMessage', 'Wrong email or password.')); // create the loginMessage and save it to session as flashdata
+                        return done(null, false, req.flash('loginMessage', 'Correo o contraseña incorrecto')); // create the loginMessage and save it to session as flashdata
                     return done(null, user);
                 });
 

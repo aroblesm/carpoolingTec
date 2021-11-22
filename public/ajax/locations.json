@@ -1,0 +1,29 @@
+{
+  "areas": ["Reserva Territorial Atlixcáyotl"],
+  "Reserva Territorial Atlixcáyotl": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {"name": "Villas de Atlixco"},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.023686,
+            -98.246339
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {"name": "Paseo Destino"},
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            19.008566582210754, -98.24536105355153
+          ]
+        }
+      }
+    ]
+  }
+}

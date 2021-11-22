@@ -1,0 +1,72 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+
+    <!-- preloader -->
+    <script src="/public/js/pace.min.js"></script>
+
+    <!--- basic page needs -->
+    <meta charset="utf-8">
+    <title>carpooling - Sign up</title>
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/css/carpooling.min.css">
+</head>
+
+<body>
+
+<div class="container-fluid padding-top-zero">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1 class="text-center uppercase carpooling-title-sm adjusted-margin-and-spacing"><i class="fa fa-sign-in"></i> Crear cuenta</h1>
+
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+            <h5><i class="fa fa-warning"></i> <%= message %></h5>
+            <% } %>
+            <br>
+
+            <!-- SIGNUP FORM -->
+            <form id="register-form" action="/signup" method="post">
+                <input type="text" class="input-margin-auto nameFields" name="firstName" placeholder="Nombre">
+                <input type="text" class="input-margin-auto nameFields" name="lastName" placeholder="Apellido"><br><br>
+                <input type="text" class="input-margin-auto" name="email" placeholder="Correo institucional"><br>
+                <input type="password" class="input-margin-auto" name="password" placeholder="Contraseña"><br>
+                <input type="text" class="input-margin-auto" name="mobileNum" placeholder="Número celular"><br>
+                <input type="text" class="input-margin-auto" name="collegeId" placeholder="Matrícula"><br>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-main gender-btn active">
+                        <input type="radio" name="gender" value="Male" autocomplete="off" checked><i
+                                class="fa fa-male"></i></label>
+                    &nbsp
+                    <label class="btn btn-main gender-btn">
+                        <input type="radio" name="gender" value="Female" autocomplete="off"><i
+                                class="fa fa-female"></i></label>
+                </div>
+                <br><br>
+                <button id="loginOrSignupBtn" type="submit" class="btn btn-main uppercase">Crear cuenta</button>
+            </form>
+            <hr>
+            <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>.</p>
+            <p>o ve al <a href="/">Inicio</a>.</p>
+        </div>
+    </div>
+</div>
+
+<% include templates/preloader.ejs %>
+
+<script src="/public/js/jquery-2.1.3.min.js"></script>
+<script src="/public/js/main.js"></script>
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/bootstrap.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+<script src="/public/js/signup/validation.js"></script>
+
+</body>
+</html>

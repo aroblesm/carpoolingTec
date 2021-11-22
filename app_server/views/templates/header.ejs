@@ -1,0 +1,32 @@
+<script src="/public/js/jquery-2.1.3.min.js"></script>
+<script>
+    $(function () {
+        $(function () {
+            var path = window.location.pathname;
+            $("#header-nav-wrap li a").each(function () {
+                var href = $(this).attr('href');
+                if (path === href) {
+                    $(this).closest('li').addClass('current');
+                } else {
+                    $(this).closest('li').removeClass();
+                }
+            });
+        });
+    });
+</script>
+
+<header id="header" class="row">
+
+    <nav id="header-nav-wrap">
+        <ul class="header-main-nav uppercase">
+            <li><a href="/dashboard" title="Dashboard" class="letter-spacing"><i
+                            class="fa fa-fw fa-tachometer"></i>&nbsp;Dashboard</a></li>
+            <li><a href="/profile" title="Perfil" class="letter-spacing"><i
+                            class="fa fa-fw fa-user-circle-o"></i>&nbsp;<%= user.collegeId %>
+                </a></li>
+        </ul>
+        <a href="/logout" class="button button-primary logOutBtn cta"><i
+                    class="fa fa-user fa-sign-out"></i>&nbsp;Salir</a>
+    </nav>
+    <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+</header> <!-- /header -->
